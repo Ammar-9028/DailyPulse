@@ -1,4 +1,5 @@
-name: DailyPulse CI/CD
+
+name: DailyPulse Build and Deploy
 
 on:
   push:
@@ -6,14 +7,24 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: self-hosted
 
     steps:
-      - name: Get latest code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Deploy website
+      - name: Build Website
         run: |
-          cp -r index.html css js /var/www/html/
-          echo "DailyPulse deployed successfully"
+          test -f index.html
+          test -f css/style.css
+          test -f js/script.js
+          mkdir -p build
+          cp index.html build/
+          cp -r css js build/
+          echo "Build Successful"
+
+      - name: Deploy to EC2
+        run: |
+          sudo cp -r build/* /var/www/html/
+          echo "Deployment Successful"
