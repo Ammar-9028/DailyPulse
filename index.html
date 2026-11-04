@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DailyPulse - Your daily source for current affairs, national and world news, technology, business and sports.">
+  <title>DailyPulse | Current Affairs & News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="top-strip">
+    <div class="container top-inner">
+      <span id="today-date">WEDNESDAY, NOVEMBER 4, 2026</span>
+      <span class="top-note">Independent perspective. Informed citizens.</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-main">
+      <a class="brand" href="#" aria-label="DailyPulse home">
+        <span class="brand-mark">D<span>.</span></span>
+        <span class="brand-name">Daily<span>Pulse</span><small>NEWS & CURRENT AFFAIRS</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="active" href="#home">Home</a>
+        <a href="#latest">Latest</a>
+        <a href="#national">National</a>
+        <a href="#world">World</a>
+        <a href="#technology">Technology</a>
+        <a href="#business">Business</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="search-toggle" aria-label="Open search">⌕</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+    <div class="container search-wrap" id="search-wrap">
+      <input id="search-input" type="search" placeholder="Search headlines, topics and categories..." aria-label="Search news">
+      <button id="search-clear" class="text-button">Clear</button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#home">Home</a><a href="#latest">Latest</a><a href="#national">National</a>
+      <a href="#world">World</a><a href="#technology">Technology</a><a href="#business">Business</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="breaking">
+      <div class="container breaking-inner">
+        <span class="breaking-label"><i></i> BREAKING</span>
+        <p id="breaking-text">Your daily briefing starts here — explore the stories shaping our world.</p>
+        <span class="breaking-date">DAILY BRIEFING</span>
+      </div>
+    </section>
+
+    <section class="container hero-section">
+      <div class="section-kicker"><span></span> THE DAILY BRIEFING <span class="kicker-line"></span><small>YOUR WORLD, IN FOCUS</small></div>
+      <div class="hero-grid">
+        <article class="hero-feature">
+          <div class="hero-image image-world">
+            <span class="image-label">TOP STORY</span>
+            <span class="image-symbol">🌐</span>
+          </div>
+          <div class="hero-copy">
+            <div class="article-meta"><span class="category-tag">WORLD</span><span>•</span><span>6 MIN READ</span></div>
+            <h1>Understanding the big stories shaping our changing world</h1>
+            <p class="summary">A clear, accessible look at the global developments, decisions and ideas making headlines today.</p>
+            <button class="read-link" data-article="1">READ THE STORY <span>↗</span></button>
+          </div>
+        </article>
+        <aside class="hero-side">
+          <div class="side-heading"><h2>IN FOCUS</h2><span>EDITOR'S PICKS</span></div>
+          <article class="focus-card">
+            <div class="focus-icon icon-blue">🇮🇳</div>
+            <div><span class="mini-category">NATIONAL</span><h3>How public policy decisions affect everyday life</h3><button data-article="2" class="small-read">Explore story ↗</button></div>
+          </article>
+          <article class="focus-card">
+            <div class="focus-icon icon-purple">💡</div>
+            <div><span class="mini-category">TECHNOLOGY</span><h3>Innovation and the technologies to watch</h3><button data-article="3" class="small-read">Explore story ↗</button></div>
+          </article>
+          <article class="focus-card">
+            <div class="focus-icon icon-orange">📈</div>
+            <div><span class="mini-category">BUSINESS</span><h3>Making sense of markets and the economy</h3><button data-article="4" class="small-read">Explore story ↗</button></div>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section class="stats-band">
+      <div class="container stats-inner">
+        <div><strong>01</strong><span>STAY INFORMED</span></div>
+        <div><strong>02</strong><span>THINK CRITICALLY</span></div>
+        <div><strong>03</strong><span>KNOW THE CONTEXT</span></div>
+        <p>Knowledge is the first step to progress.</p>
+      </div>
+    </section>
+
+    <section class="container content-section" id="latest">
+      <div class="section-heading">
+        <div><div class="section-kicker"><span></span> WHAT'S HAPPENING</div><h2>Latest <em>Stories</em></h2></div>
+        <a href="#all-stories" class="view-all">VIEW ALL STORIES ↗</a>
+      </div>
+      <div class="filter-row" id="category-filters">
+        <button class="filter active" data-category="All">All stories</button>
+        <button class="filter" data-category="National">National</button>
+        <button class="filter" data-category="World">World</button>
+        <button class="filter" data-category="Technology">Technology</button>
+        <button class="filter" data-category="Business">Business</button>
+        <button class="filter" data-category="Sports">Sports</button>
+        <button class="filter" data-category="Education">Education</button>
+      </div>
+      <div class="news-grid" id="news-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>No stories match your search. Try another keyword or category.</p>
+    </section>
+
+    <section class="topic-band" id="national">
+      <div class="container topic-inner">
+        <div><div class="section-kicker light"><span></span> LEARN EVERY DAY</div><h2>Current Affairs,<br><em>Made Clear.</em></h2><p>Build awareness beyond headlines. Understand the context behind important topics and stay curious about the world around you.</p></div>
+        <div class="topic-stamp"><span>THE</span><strong>DAILY<br>PULSE</strong><small>KNOW MORE. DO MORE.</small></div>
+      </div>
+    </section>
+
+    <section class="container content-section topic-sections">
+      <div class="topic-column" id="world"><span class="column-number">01 / WORLD</span><h2>Beyond <em>Borders</em></h2><p>Global affairs, diplomacy and events that connect us all.</p></div>
+      <div class="topic-column" id="technology"><span class="column-number">02 / TECHNOLOGY</span><h2>Future <em>Forward</em></h2><p>Science, innovation and digital trends shaping tomorrow.</p></div>
+      <div class="topic-column" id="business"><span class="column-number">03 / BUSINESS</span><h2>Money <em>Matters</em></h2><p>Economy, markets and business explained simply.</p></div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <div><span class="section-kicker light"><span></span> THE PULSE IN YOUR INBOX</span><h2>Stay curious.<br><em>Stay informed.</em></h2><p>Get the DailyPulse briefing. No noise, just a reason to know more.</p></div>
+        <form id="newsletter-form"><label for="email">YOUR EMAIL ADDRESS</label><div class="email-row"><input id="email" type="email" placeholder="you@example.com" required><button type="submit">SUBSCRIBE ↗</button></div><small id="newsletter-message">Demo form — no email will be sent or stored.</small></form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="brand footer-brand" href="#"><span class="brand-mark">D<span>.</span></span><span class="brand-name">Daily<span>Pulse</span><small>NEWS & CURRENT AFFAIRS</small></span></a>
+      <p>Clear perspectives for a better-informed tomorrow.</p>
+      <div class="footer-links"><a href="#home">Home</a><a href="#latest">Latest stories</a><a href="#national">About</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> DailyPulse. Built for learning and awareness.</span><span>DEMO NEWS CONTENT · VERIFY FACTS WITH TRUSTED SOURCES</span></div>
+  </footer>
+
+  <div class="modal" id="article-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" data-close-modal aria-label="Close article">×</button>
+      <span class="category-tag" id="modal-category">CURRENT AFFAIRS</span>
+      <h2 id="modal-title">Article title</h2>
+      <p class="modal-meta" id="modal-meta">DAILYPULSE EXPLAINER · 4 MIN READ</p>
+      <div class="modal-rule"></div>
+      <p id="modal-body"></p>
+      <p class="demo-notice">EDITORIAL NOTE: This is sample educational content for the DailyPulse website demo, not a verified breaking-news report.</p>
+    </article>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
