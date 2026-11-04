@@ -1,4 +1,3 @@
-
 name: DailyPulse CI/CD
 
 on:
@@ -8,15 +7,13 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+
     steps:
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            cd /tmp/DailyPulse
-            git pull origin main
-            sudo cp -r index.html css js /var/www/html/
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Deploy website
+        run: |
+          cp -r index.html css js /var/www/html/
+          echo "DailyPulse deployed successfully"
